@@ -1,0 +1,77 @@
+.dashboard{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+}
+.sidebar{
+    width: 15%;
+    margin-right: 20px;
+}
+.add-btn{
+    padding: 5px 10px;
+    font-size: 1.7rem;
+    margin-bottom: 30px;
+    margin-left: 0;
+}
+.table{
+    border: none;
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+}
+.adminproduct-image img{
+    width: 50px;
+    height: 50px;
+}
+.btn-update, .btn-delete{
+    font-size: 1.7rem;
+}
+.page-link{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    border: none;
+}
+.page-link span{
+    margin-left: 0;
+}
+.page-item{
+    border-right: 1px solid rgb(201, 199, 197);
+}
+.page-item>a>span{
+    font-size: 2rem;
+}
+.product-admin-name{
+    width: 236px;
+    padding-left: 20px !important;
+    text-align: left !important;
+}
+.product-current_price{
+   width: 160px;
+}
+.product-old_price{
+    width: 160px;
+}
+.product-percentage_price{
+    width: 150px;
+}
+.delete-button{
+    width: 90px;
+}
+.list-group{
+    margin-top: 66px;
+}
+.product-brand{
+    text-transform: uppercase;
+    width: 120px;
+}
+.product-categories{
+    text-transform: capitalize;
+    width: 155px;
+}
+.wrapper{
+    margin: 0 15px 0 5px;
+}

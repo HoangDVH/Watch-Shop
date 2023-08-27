@@ -1,0 +1,13 @@
+.banner-img img{
+    width: 100%;
+    height: 100%;
+
+    
+}
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: var(--swiper-pagination-bottom, 30px) !important;
+    font-size: 50px !important;
+}
+.swiper{
+    margin-bottom: -22px !important;
+}

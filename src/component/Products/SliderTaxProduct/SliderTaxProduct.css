@@ -1,0 +1,33 @@
+.slider-img{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    gap: 1px;
+    position: relative;
+   
+}
+
+.home-box-tax{
+    margin-top: -40px;
+   
+}
+.swiper-button-prev,
+.swiper-button-next {
+  width: 40px;
+  font-size: 50px;
+}
+.slider-img span{
+    color: rgb(253, 253, 246);
+    font-size: 18px;
+    font-weight: bolder;
+    text-align: center;
+    text-transform: uppercase;
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+    left: 0;
+} 
+.slider-img:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}

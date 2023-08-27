@@ -1,0 +1,118 @@
+.product-left img{
+    width: 448px;
+    height: 538px;
+}
+.product-detail{
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.product-title{
+    font-size: 2.2rem;
+    color: aliceblue;
+}
+.product-content-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.product-content-view span{
+    color: aliceblue;
+    font-size: 1.54rem;
+}
+.product-content-view{
+    color: aliceblue;
+    font-size: 1.4rem;
+}
+.btn-primary{
+    font-size: 1.4rem;
+    margin-left: 3px;
+}
+.btn-primary span{
+    font-size: 1.4rem;
+}
+.product-right{
+    width: 45%;
+    margin-left: 120px;
+}
+.thong-so-box{
+    color: aliceblue;
+    margin-top: 35px;
+    
+    padding: 15px 0;
+    border-bottom: 1px solid rgb(110, 109, 109);
+    border-top: 1px solid rgb(110, 109, 109);
+    line-height: 2.5rem;
+
+}
+
+.thong-so-box p,span{
+    font-size: 1.5rem;
+}
+.text-name{
+    text-align: left;
+    margin-left: 0;
+}
+.product-price{
+    width: 380px;
+    text-align: left;
+    margin-bottom: 10x;
+
+}
+.text{
+    display: flex;
+    justify-content: space-between;
+   
+   
+   
+}
+.product-btn{
+    margin-top: 20px;
+}
+.btn-buy{
+    width: 48%;
+    font-size: 1.8rem;
+    background-color: orange;
+}
+.btn-buy:hover{
+    background-color: orange;
+}
+.btn-installment{
+    width: 50%;
+    margin-left: 10px;
+    font-size: 1.8rem;
+    background-color: green
+}
+.btn-hotline{
+    background-color: yellow;
+    color: black;
+    font-size: 1.8rem;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 0;
+}
+.btn-installment:hover{
+    background-color: green;
+}
+.btn-hotline:hover{
+    background-color: yellow;
+    color: black;
+}
+.promotional-content{
+    color: aliceblue;
+    border: 1px solid rgb(105, 103, 103);
+    margin-top: 30px;
+    padding-left: 20px;
+   
+    
+}
+.promptional-title{
+    color: yellow;
+    font-size: 2.6rem;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+

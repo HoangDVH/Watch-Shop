@@ -1,0 +1,49 @@
+.breadcrumb-box{
+    background: #3f4952;
+    padding: 15px 0;
+    margin-bottom: 20px;
+}
+.breadcrumb-name{
+    color: aliceblue !important;
+    text-decoration: none;
+    list-style: none;
+    margin: 0 0px 0 3px;
+    font-size: 1.6rem;
+}
+.breadcrumb-name:hover{
+    text-decoration: underline;
+}
+.breadcrumb-category:hover{
+    text-decoration: underline;
+}
+.breadcrumb-category{
+    color: aliceblue !important;
+    text-decoration: none;
+    list-style: none;
+    margin: 0 6px 0 6px;
+    font-size: 1.6rem;
+}
+.breadcrumb-icon{
+    color: aliceblue;
+    font-size: 20px;
+    
+}
+.breadcrumb-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+
+}
+.breadcrumb-list{
+    list-style: none;
+    display: flex;
+    margin-left: -18px;
+    margin-bottom: 0;
+}
+.breadcrumb-list li{
+    padding: 0 5px;
+}
+.breadcrumb-list li:last-child {
+    color: yellow; /* hoặc mã màu của bạn */
+  }

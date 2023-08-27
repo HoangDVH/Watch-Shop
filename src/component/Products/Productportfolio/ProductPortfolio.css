@@ -1,0 +1,38 @@
+.main-content {
+    padding: 20px 0;
+    background-color: #2a3740;
+}
+.home-box {
+    margin-bottom: 33px;
+   width: 100%;
+    
+}
+.box-title {
+    width: 100%;
+    margin: 0 auto 20px;
+    color: #ffea00;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    
+}
+.box-title span {
+    padding: 0 15px;
+    background: #2a3740;
+    position: relative;
+    z-index: 2;
+    font-size: 22px;
+}
+.box-title::after {
+    content: '';
+    width: 960px;
+    background: white;
+    position: absolute;
+    height: 1px;
+    top: 50%;
+    left: 138px;
+   
+}
+

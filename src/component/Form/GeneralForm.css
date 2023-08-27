@@ -1,0 +1,30 @@
+.formin-title{
+    font-size: 1.6rem;
+    color: black;
+    text-align: left;
+}
+.form-input{
+    font-size: 1.5rem;
+
+}
+.modal-title{
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.modal-add{
+    font-size: 1.8rem;
+    padding: 5px 15px;
+}
+.modal-cancle{
+    font-size: 1.8rem;
+    padding: 5px 15px;
+}
+.image-preview{
+    max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+.preview-title{
+    margin-top: 10px;
+}

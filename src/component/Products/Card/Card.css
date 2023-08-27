@@ -1,0 +1,88 @@
+.grid{
+    display: grid;
+    grid-gap:20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+  }
+.card{
+    width: 306px;
+    position: relative;
+}
+.cart-list{
+    width: 100%;
+  }
+.card img{
+    width: 100%;
+    height: 380px;
+    position: relative;
+    overflow: hidden;
+}
+.card-body{
+    width: 100%;
+}
+img {
+    border: 0;
+    margin-left: 0px;
+}
+.card-title{
+    height: 48px;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    overflow: hidden;
+    text-align: center;
+}
+.card-title:hover{
+    color: #f50;
+    cursor: pointer;
+}
+.card-text{
+    text-align: center;
+}
+.product-curentprice{
+    font-size: 2rem;
+    color: #f50;
+    font-weight: 700;
+}
+.product-oldprice{
+    font-size: 1.3rem;
+    text-decoration: line-through;
+    color: rgb(137, 132, 132);
+}
+.product-perprice{
+    background-color: #f50;
+    font-size: 1.4rem;
+    padding: 1px 10px;
+    border-radius: 5px;
+    color: aliceblue;
+   
+}
+.icon-installment{
+    padding: 2px 5px;
+    background: #f50;
+    color: #fff;
+    border-radius: 2px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.load-more{
+  
+    width: 310px;
+    height: 40px;
+    margin: 40px 487px;
+    border: 0;
+    font-size: 1.8rem;
+    color: black;
+    background-color: yellow;
+    text-transform: uppercase;
+}
+.load-more:hover{
+    color: #fff;
+    background-color: #f50;
+}
+
+.no-underline {
+    text-decoration: none;
+  }
+  

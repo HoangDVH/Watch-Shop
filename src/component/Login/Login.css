@@ -1,0 +1,104 @@
+.login-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   
+}
+.login{
+    background-color: aliceblue;
+    padding: 20px 30px;
+    border-radius: 15px;
+}
+.login-head{
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.login-title{
+    font-size: 1.4rem;
+    color: black;
+}
+.login-input{
+    position: relative;
+    width: 350px;
+    padding: 10px 5px;
+    font-size: 1.6rem;
+}
+.login-remem{
+    font-size: 1.3rem;
+}
+.login-btn{
+    margin-top: 20px;
+    margin-bottom: 35px;
+    padding: 10px 0;  
+    width: 100%;
+}
+.login-btn-title{
+    font-size: 1.8rem;
+    color: aliceblue;
+}
+.login-body{
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 10px;    
+}
+.login-gg{
+    width: 48%;
+    padding: 8px 0;
+    font-size: 1.6rem;
+    background-color: aliceblue;
+    color: black;
+    border: 1px sloid rgb(233, 3, 3) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.login-gm{
+    width: 48%;
+    padding: 8px 0;
+    font-size: 1.6rem;
+    background-color: aliceblue;
+    color: black;
+    border: 1px sloid rgb(233, 3, 3) !important;
+    margin-left: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.login-dif{
+    display: flex;
+    margin-bottom: 60px;
+}
+.gg-icon{
+    margin-right: 5px;
+}
+.gm-icon{
+    margin-right: 5px;
+    color: red;
+}
+.login-footer{
+    text-align: center;
+}
+.error{
+    max-width: 327px;
+}
+.eye-icon{
+    position: absolute;
+    top:42px;
+    right: 15px;
+    color: rgb(143, 144, 146);
+    font-size: 1.9rem;
+}
+.eye-icon:hover{
+    cursor: pointer;
+}
+.password-area{
+    position: relative;
+}
+.error-border {
+    border-color: red;
+  }
+

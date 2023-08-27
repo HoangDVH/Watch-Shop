@@ -1,0 +1,339 @@
+.header-top{
+    
+    height: 50px;
+    background: rgba(76,76,76,.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right:0;
+    z-index: 100;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: 100%;
+}
+.header-top-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.header-top-left a{
+    text-decoration: none;
+    color: aliceblue;
+}
+.header-contact{
+    display: flex;
+    align-items: center;
+}
+span{
+    margin-left: 8px;
+    font-size: 1.8rem;
+}
+.navbar-icon{
+    font-size: 20px;
+} 
+.header-hotline{
+    display: flex;
+    align-items: center;
+    padding-left: 35px;
+}
+.header-top-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart-mini-box{
+    display: flex;
+    margin-right: 50px;
+   
+}
+.navbar-icon-search{
+    font-size: 25px;
+    margin-right: 10px;
+}
+.cart-mini{
+    display: flex;
+    align-items: center;
+    color: aliceblue;
+    
+    text-decoration: none;
+}
+
+.cart-mini:hover{
+    color: yellow;
+    cursor: pointer;
+}
+
+.search-form{
+    margin-top: 8px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 1px solid black ;
+}
+.txt-search{
+    padding: 4px;
+    position: relative;
+    width: 360px;
+}
+.btn-search{
+    position: absolute;
+    top:3px;
+    right:9px;
+    border: none;
+    background: transparent;
+}
+.search-icon{
+    font-size: 18px;
+}
+.count{
+    color: yellow;
+}
+.btn-search:hover{
+    cursor: pointer;
+}
+.logo{
+    margin-top: 20px;
+}
+.logo img {
+    height: 80px;
+    display: block;
+    margin: auto;
+}
+.header-bottom {
+    padding-top: 42px;
+    background: url(https://thanhhungwatch.vn/theme/default/images/bg-top-header.png) center center/cover no-repeat;
+}
+.container-logo{
+    margin-top: 20px;
+   padding: 0 69px;
+   margin: 0 110px;
+}
+
+.main-menu {
+    text-align: center;
+    margin-top: 10px;
+    position: relative;
+}
+.main-menu ul {
+    margin: 0;
+    list-style: none;
+}
+.main-menu ul li {
+    display: inline-block;
+}
+.main-menu ul li a {
+    display: block;
+    padding: 16px 18px;
+    color: #fff;
+    font-weight: 300;
+    text-transform: uppercase;
+    position: relative;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+.main-menu ul li a:hover{
+    color: yellow;
+}
+.main-menu>ul>li>a::after {
+    content: '';
+    width: 1px;
+    height: 18px;
+    margin: auto;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    right: -2px;
+    bottom: 0;
+}
+.main-menu>ul>li:last-child>a::after {
+    display: none;
+}
+.hamburger-menu{
+    position: absolute;
+    top: 25%;
+    right: 5px;
+    font-size: 25px;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+
+}
+
+
+/* CSS cho kích thước màn hình lớn hơn hoặc bằng 768px */
+
+  /* CSS cho kích thước màn hình nhỏ hơn 768px */
+  @media (max-width: 500px) {
+   .header-top{
+    width: 412px;
+   }
+  .container{
+    width: 100%;
+    margin-right: 2px;
+    margin-left: 2px;
+  }
+   span{
+    font-size:1.2rem;
+    width: 64px;
+    margin-left: 5px;
+   }
+   .header-hotline{
+    padding-left: 2px;
+   }
+   .header-top-right{
+    padding-left: 24px;
+   }
+   .count{
+    margin-left: -5px;
+   }
+   .btn-search{
+    right: 62px;
+   }
+
+   .main-menu ul li {
+        display: block;
+    }
+    .main-menu ul{
+        margin: 0 -124px;
+        
+    }
+    .main-menu>ul>li>a::after{
+        display: none;
+    }
+    .logo img{
+        display: none;
+    }
+    .search-box{
+        display: none;
+    }
+    .hamburger-menu{
+        display: block;
+    }
+    .main-menu ul{
+        display: none;
+    }
+    .main-menu.expanded ul{
+        display: block;
+    }
+    .main-menu ul li a:hover{
+        background-color: yellow;
+        color: black;
+    } 
+    .container-logo{
+        padding: 0;
+    }
+    .header-bottom{
+        padding-top: 30px;
+    }
+    .container img{
+        width: 100%;
+    margin-right: 2px !important;
+    margin-left: 2px !important;
+    }
+    .slider-img{
+        width: 26% !important;
+    }
+
+   
+  
+   
+}
+@media (max-width: 400px) {
+    .hamburger-menu{
+        position: absolute;
+        top: 25%;
+        right: 28px;
+        font-size: 25px;
+        color: #fff;
+        cursor: pointer;
+        display: block;
+    
+    }
+    
+}
+
+.main-menu .sub-menu{
+    display: none;
+   position: absolute;
+   top: 56px;
+   left: 202px;
+   width: 174px;
+   background-color: rgba(0,0,0,.8);
+   color: #fff;
+   z-index: 200;
+   text-align: left;
+   
+}
+.main-menu li:hover>.sub-menu{
+    display: block;
+   
+  }
+.main-menu>li>.sub-menu{
+    top: 40px;
+    left: 0;
+  }
+  .main-menu .sub-menu li a{
+    font-size: 1.3rem;
+    margin-left: -18px;
+  }
+
+  .search-results{
+    position: absolute;
+    top: 34px;
+    left: 0px;
+    background-color:white;
+    width: 100%;
+    padding: 8px;
+    display: none;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  .search-results.visible {
+    display: block; /* Show the search results when there's a search query */
+  }
+  .search-result img{
+    width: 50px;
+    height: 50px;
+
+    
+  }
+  .search-result{
+    display: flex;
+    align-items: center;
+    margin:10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(198, 194, 194);
+  }
+.search-result-content{
+    margin-left: 10px;
+}
+.search-result-title{
+    font-size: 1.3rem;
+    color: blue;
+}
+.search-result-price{
+    color: red;
+}
+.login-nav{
+    font-size: 1.5rem;
+    color: #fff;
+}
+.login-nav{
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+.log-icon{
+    padding-right: 2px;
+    font-size: 1.8rem;
+}
+.login-nav:hover{
+    color: yellow;
+    cursor: pointer;
+}
