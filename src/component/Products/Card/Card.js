@@ -12,7 +12,7 @@ export const Cart = ({ category }) => {
   const [isLoading, setIsLoading] = useState(false);
   const scrollToTop = () => {
     window.scrollTo({
-      top: 200,
+      top: 250,
       behavior: "smooth",
     });
   };

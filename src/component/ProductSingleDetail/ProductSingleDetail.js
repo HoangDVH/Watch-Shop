@@ -1,7 +1,6 @@
 import React from "react";
 import "./ProductSingleDetail.css";
 import { Table } from "reactstrap";
-import { useLocation } from "react-router";
 export const ProductSingleDetail = ({ productDetail }) => {
   return (
     <div className="container">

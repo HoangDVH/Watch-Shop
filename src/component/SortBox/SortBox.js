@@ -1,5 +1,5 @@
 import React from "react";
-import { FormGroup, Input, Label } from "reactstrap";
+import { FormGroup, Input} from "reactstrap";
 import "./SortBox.css";
 export const SortBox = () => {
   return (

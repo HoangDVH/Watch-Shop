@@ -24,19 +24,19 @@ export const GeneralForm = ({ isOpen, toggle, mode, editedProduct }) => {
     percentage_price: "",
     image: "",
     categories: "",
-    brand:"",
+    brand: "",
   });
 
   useEffect(() => {
     if (mode === "edit product" && editedProduct) {
       setFormData({
         title: editedProduct.title,
-        current_price: editedProduct.current_price.toString(),
-        old_price: editedProduct.old_price.toString(),
+        current_price: editedProduct.current_price.toLocaleString(),
+        old_price: editedProduct.old_price.toLocaleString(),
         percentage_price: editedProduct.percentage_price.toString(),
         image: editedProduct.image,
         categories: editedProduct.categories,
-        brand:editedProduct.brand,
+        brand: editedProduct.brand,
       });
     } else {
       resetFormData();
@@ -85,7 +85,7 @@ export const GeneralForm = ({ isOpen, toggle, mode, editedProduct }) => {
       percentage_price: "",
       image: "",
       categories: "",
-      brand:"",
+      brand: "",
     });
     setImagePreview(null);
   };
@@ -137,7 +137,7 @@ export const GeneralForm = ({ isOpen, toggle, mode, editedProduct }) => {
                 onChange={handleInputChange}
               />
             </FormGroup>
-           
+
             <FormGroup>
               <Label for="examplePassword" className="formin-title">
                 Phần trăm giảm
@@ -161,7 +161,7 @@ export const GeneralForm = ({ isOpen, toggle, mode, editedProduct }) => {
                 type="select"
                 value={formData.categories}
                 onChange={handleInputChange}
-                className="form-input"
+                className="select-category"
               >
                 <option>đồng hồ nam</option>
                 <option>đồng hồ nữ</option>
@@ -180,14 +180,14 @@ export const GeneralForm = ({ isOpen, toggle, mode, editedProduct }) => {
                 type="select"
                 value={formData.brand}
                 onChange={handleInputChange}
-                className="form-input"
+                className="select-brand"
               >
-                <option>đồng hồ lobinni</option>
-                <option>đồng hồ kassaw</option>
-                <option>đồng hồ teintop</option>
-                <option>đồng hồ border</option>
-                <option>đồng hồ lisheng</option>
-                <option>đồng hồ lixing</option>
+                <option>lobinni</option>
+                <option>kassaw</option>
+                <option>teintop</option>
+                <option>border</option>
+                <option>lisheng</option>
+                <option>lixing</option>
               </Input>
             </FormGroup>
             <FormGroup>

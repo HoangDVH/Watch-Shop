@@ -7,7 +7,6 @@ import { News } from "../../component/News/News";
 import { useParams } from "react-router";
 
 export const NewsPage = () => {
-  const {news} = useParams();
   return (
     <div>
       <Navbar />

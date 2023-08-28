@@ -1,6 +1,47 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { BiTimeFive } from "react-icons/bi";
+import { format } from "date-fns"; 
 export const NewsDetailContent = ({ news }) => {
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState("");
+
+  useEffect(() => {
+    axios
+      .get("https://64c7a247a1fe0128fbd50e91.mockapi.io/comments")
+      .then((response) => {
+        const commentsData = response.data; // Assuming the API response contains an array of comments
+        setComments(commentsData); // Update the comments state with the fetched comments
+      })
+      .catch((error) => {
+        console.error("Error fetching comments:", error);
+      });
+  }, []);
+
+  const handleCommentChange = (event) => {
+    setNewComment(event.target.value);
+  };
+
+  const handleAddComment = () => {
+    if (newComment.trim() !== "") {
+      const newCommentObj = { name: "User", body: newComment };
+
+      // Save the new comment to the API
+      axios
+        .post(
+          "https://64c7a247a1fe0128fbd50e91.mockapi.io/comments",
+          newCommentObj
+        )
+        .then((response) => {
+          // Update the comments state with the new comment from the API response
+          setComments([...comments, response.data]);
+          setNewComment(""); // Clear the newComment state
+        })
+        .catch((error) => {
+          console.error("Error adding comment:", error);
+        });
+    }
+  };
   return (
     <div className="container">
       <div className="news-wrapper">
@@ -55,13 +96,43 @@ export const NewsDetailContent = ({ news }) => {
         <div className="comment">
           <div className="comment-title">BÌNH LUẬN</div>
           <div className="comment-container">
-            <div className="comment-logo">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1200px-User-avatar.svg.png"
-                alt="dsd"
+            <div>{comments.length} bình luận</div>
+            <div className="comment-content">
+              <div className="comment-logo">
+                <img
+                  src="https://scontent.fsgn5-14.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?stp=cp0_dst-png_p74x74&_nc_cat=1&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=MQXJ_lqnI0gAX848L9M&_nc_ht=scontent.fsgn5-14.fna&edm=AJqh0Q8EAAAA&oh=00_AfB_wCsZzpsvBNVxUNA0jTLH4OfIMZfpG-nl5oxwMQ4wuQ&oe=6512F0F8"
+                  alt="dsd"
+                />
+              </div>
+              <input
+                className="comment-input"
+                placeholder="Viết bình luận..."
+                value={newComment}
+                onChange={handleCommentChange}
               />
+              <button onClick={handleAddComment} className="comment-btn">
+                Thêm bình luận
+              </button>
             </div>
-            <input className="comment-input" placeholder="Viết bình luận..." />
+            <div className="comments-content">
+              {comments.map((comment, index) => (
+                <div key={index} className="comment-item">
+                  <div className="comment-logo">
+                    <img
+                      src="https://scontent.fsgn5-14.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?stp=cp0_dst-png_p74x74&_nc_cat=1&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=MQXJ_lqnI0gAX848L9M&_nc_ht=scontent.fsgn5-14.fna&edm=AJqh0Q8EAAAA&oh=00_AfB_wCsZzpsvBNVxUNA0jTLH4OfIMZfpG-nl5oxwMQ4wuQ&oe=6512F0F8"
+                      alt="dsd"
+                    />
+                  </div>
+                  <div className="comments-body">
+                    <div className="comment-name">
+                      Hoang
+                      <div className="comment-date"> {format(new Date(comment.createdAt), "yyyy-MM-dd HH:mm:ss")}</div>
+                    </div>
+                    <div className="comment-bd">{comment.body}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

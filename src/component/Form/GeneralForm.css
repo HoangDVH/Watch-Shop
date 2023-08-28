@@ -28,3 +28,11 @@
 .preview-title{
     margin-top: 10px;
 }
+.select-brand{
+    width: 100%;
+    padding: 12px 0 12px 8px;
+}
+.select-category{
+    width: 100%;
+    padding: 12px 0 12px 8px;
+}

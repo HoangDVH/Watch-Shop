@@ -2,7 +2,6 @@ import React from "react";
 import { AiFillHome } from "react-icons/ai";
 import "./BreadCrumb.css";
 import { useLocation } from "react-router";
-import { key } from "localforage";
 import { Link } from "react-router-dom";
 
 export const BreadCrumb = () => {
@@ -31,7 +30,9 @@ export const BreadCrumb = () => {
             {breadcrumbs.map((breadcrumb, index) => (
               <li key={breadcrumb}>
                 {index === 0 ? (
-                  <Link to={"/"} className="link-style">Trang chủ</Link>
+                  <Link to={"/"} className="link-style">
+                    Trang chủ
+                  </Link>
                 ) : index === breadcrumbs.length - 1 ? (
                   // Display non-clickable text for the last breadcrumb
                   breadcrumbMappings[breadcrumb] ||

@@ -3,18 +3,13 @@ import {
   Button,
   ListGroup,
   ListGroupItem,
-  Pagination,
-  PaginationItem,
-  PaginationLink,
   Table,
 } from "reactstrap";
 import "./Admin.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  fetchProductsSuccess,
   selectCurrentPage,
   selectProducts,
-  setCurrentPage,
   selectTotalPages,
 } from "../../store/dataSlice";
 import { deleteProduct, fetchProducts } from "../../store/dataThunk";

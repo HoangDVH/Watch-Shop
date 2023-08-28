@@ -9,11 +9,10 @@ import { CartPage } from "./pages/CartPage/CartPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Import CSS for styling
 import { PaymentPage } from "./pages/PaymentPage/PaymentPage";
-import { Login } from "./component/Login/Login";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
 import { RegisterPage } from "./pages/RegisterPage/RegisterPage";
 import { AuthContextProvider } from "./context/AuthContext";
-import { Admin, AdminPage } from "./pages/AdminPage/AdminPage";
+import { AdminPage } from "./pages/AdminPage/AdminPage";
 import { NewsPage } from "./pages/NewsPage/NewsPage";
 import { NewsDetailPage } from "./pages/NewsDetailPage/NewsDetailPage";
 function App() {

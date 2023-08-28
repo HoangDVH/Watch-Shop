@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 import "./Payment.css";
 import { useDispatch, useSelector } from "react-redux";
-import { selectTotalPrice,updateSoldQuantity } from "../../store/cartSlice";
+import { selectTotalPrice} from "../../store/cartSlice";
 import { updateCart } from "../../store/cartSlice";
 import { Formik } from "formik";
 import * as Yup from "yup";

@@ -23,7 +23,7 @@ export const Navbar = () => {
   //Create login
   const { userLoggedIn, logoutUser } = UserAuth(); // Use the userLoggedIn and logoutUser from AuthContext
   const location = useLocation();
-  const isLoginPage = location.pathname === "/login";
+
 
   //Create search
   const [searchQuery, setSearchQuery] = useState("");
@@ -157,7 +157,7 @@ export const Navbar = () => {
             <a href="/">
               <img
                 src="https://thanhhungwatch.vn/uploads/pc_thanhhungwatch.vn_-_1.png"
-                alt="image"
+                alt="dsa"
               ></img>
             </a>
           </div>

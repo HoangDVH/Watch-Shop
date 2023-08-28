@@ -1,7 +1,6 @@
 import React from "react";
 import { Navbar } from "../../component/NavBar/Navbar";
 import { HeaderSale } from "../../component/HeaderSale/HeaderSale";
-import { Product } from "../../component/Products/Products";
 import { ProductPortfolio } from "../../component/Products/Productportfolio/ProductPortfolio";
 import { Cart } from "../../component/Products/Card/Card";
 import { useParams } from "react-router-dom";

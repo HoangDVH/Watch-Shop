@@ -1,5 +1,4 @@
 import React from "react";
-import { BiTimeFive } from "react-icons/bi";
 import { NewsDetailContent } from "../../component/News/NewsDetailContent";
 import { useParams } from "react-router";
 import { Navbar } from "../../component/NavBar/Navbar";
@@ -14,7 +13,7 @@ export const NewsDetailPage = () => {
       <HeaderSale />
       <BreadCrumb />
       <NewsDetailContent news={news} />
-      <Footer/>
+      <Footer />
     </>
   );
 };
