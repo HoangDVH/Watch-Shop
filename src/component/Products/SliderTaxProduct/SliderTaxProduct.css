@@ -4,7 +4,9 @@
     display: flex;
     gap: 1px;
     position: relative;
-   
+}
+.slider-img img{
+    width: 422px;
 }
 
 .home-box-tax{
@@ -17,14 +19,14 @@
   font-size: 50px;
 }
 .slider-img span{
-    color: rgb(253, 253, 246);
+    color: white;
     font-size: 18px;
     font-weight: bolder;
     text-align: center;
     text-transform: uppercase;
     position: absolute;
     right: 0;
-    bottom: 15px;
+    bottom: 35px;
     left: 0;
 } 
 .slider-img:hover{

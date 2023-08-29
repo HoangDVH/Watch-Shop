@@ -1,22 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BiTimeFive } from "react-icons/bi";
-import { format } from "date-fns"; 
-export const NewsDetailContent = ({ news }) => {
-  const [comments, setComments] = useState([]);
+import { format } from "date-fns";
+import { useDispatch, useSelector } from "react-redux";
+import { addComment } from "../../store/commentsSlice";
+export const NewsDetailContent = ({ news,comments }) => {
+  const dispatch = useDispatch();
   const [newComment, setNewComment] = useState("");
-
-  useEffect(() => {
-    axios
-      .get("https://64c7a247a1fe0128fbd50e91.mockapi.io/comments")
-      .then((response) => {
-        const commentsData = response.data; // Assuming the API response contains an array of comments
-        setComments(commentsData); // Update the comments state with the fetched comments
-      })
-      .catch((error) => {
-        console.error("Error fetching comments:", error);
-      });
-  }, []);
 
   const handleCommentChange = (event) => {
     setNewComment(event.target.value);
@@ -24,24 +14,23 @@ export const NewsDetailContent = ({ news }) => {
 
   const handleAddComment = () => {
     if (newComment.trim() !== "") {
-      const newCommentObj = { name: "User", body: newComment };
+      const newCommentObj = { name: "User", body: newComment, news: news };
 
-      // Save the new comment to the API
       axios
         .post(
           "https://64c7a247a1fe0128fbd50e91.mockapi.io/comments",
           newCommentObj
         )
         .then((response) => {
-          // Update the comments state with the new comment from the API response
-          setComments([...comments, response.data]);
-          setNewComment(""); // Clear the newComment state
+          dispatch(addComment(response.data)); // Dispatch the addComment action
+          setNewComment("");
         })
         .catch((error) => {
           console.error("Error adding comment:", error);
         });
     }
   };
+
   return (
     <div className="container">
       <div className="news-wrapper">
@@ -126,7 +115,13 @@ export const NewsDetailContent = ({ news }) => {
                   <div className="comments-body">
                     <div className="comment-name">
                       Hoang
-                      <div className="comment-date"> {format(new Date(comment.createdAt), "yyyy-MM-dd HH:mm:ss")}</div>
+                      <div className="comment-date">
+                        {" "}
+                        {format(
+                          new Date(comment.createdAt),
+                          "yyyy-MM-dd HH:mm:ss"
+                        )}
+                      </div>
                     </div>
                     <div className="comment-bd">{comment.body}</div>
                   </div>

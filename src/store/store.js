@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartReducer, { updateCart } from "./cartSlice"; // Đường dẫn tới file cartSlice.js
 import dataReducer from "./dataSlice";
+import commentReducer from "./commentsSlice"
 
 const store = configureStore({
   reducer: {
     data: dataReducer,
     cart: cartReducer,
+    comments: commentReducer,
   },
 });
 
