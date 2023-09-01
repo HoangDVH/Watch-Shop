@@ -1,20 +1,27 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { BiTimeFive } from "react-icons/bi";
-import { format } from "date-fns";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addComment } from "../../store/commentsSlice";
-export const NewsDetailContent = ({ news,comments }) => {
+import { UserAuth } from "../../context/AuthContext";
+import { Link } from "react-router-dom";
+export const NewsDetailContent = ({ news, comments }) => {
+  const { userLoggedIn, user } = UserAuth();
   const dispatch = useDispatch();
   const [newComment, setNewComment] = useState("");
 
-  const handleCommentChange = (event) => {
-    setNewComment(event.target.value);
+  const handleCommentChange = (e) => {
+    setNewComment(e.target.value);
   };
 
   const handleAddComment = () => {
     if (newComment.trim() !== "") {
-      const newCommentObj = { name: "User", body: newComment, news: news };
+      const newCommentObj = {
+        user: user,
+        body: newComment,
+        news: news,
+        timestamp: new Date(),
+      };
 
       axios
         .post(
@@ -28,6 +35,26 @@ export const NewsDetailContent = ({ news,comments }) => {
         .catch((error) => {
           console.error("Error adding comment:", error);
         });
+    }
+  };
+
+  const calculateTimeDifference = (commentTimestamp) => {
+    const currentTime = new Date();
+    const timeDifference = currentTime - new Date(commentTimestamp);
+
+    // Tính thời gian theo phút, giờ, ngày, tháng, năm
+    if (timeDifference < 60000) {
+      return `${Math.floor(timeDifference / 1000)} giây`;
+    } else if (timeDifference < 3600000) {
+      return `${Math.floor(timeDifference / 60000)} phút`;
+    } else if (timeDifference < 86400000) {
+      return `${Math.floor(timeDifference / 3600000)} giờ`;
+    } else if (timeDifference < 2592000000) {
+      return `${Math.floor(timeDifference / 86400000)} ngày`;
+    } else if (timeDifference < 31536000000) {
+      return `${Math.floor(timeDifference / 2592000000)} tháng`;
+    } else {
+      return `${Math.floor(timeDifference / 31536000000)} năm`;
     }
   };
 
@@ -89,41 +116,59 @@ export const NewsDetailContent = ({ news,comments }) => {
             <div className="comment-content">
               <div className="comment-logo">
                 <img
-                  src="https://scontent.fsgn5-14.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?stp=cp0_dst-png_p74x74&_nc_cat=1&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=MQXJ_lqnI0gAX848L9M&_nc_ht=scontent.fsgn5-14.fna&edm=AJqh0Q8EAAAA&oh=00_AfB_wCsZzpsvBNVxUNA0jTLH4OfIMZfpG-nl5oxwMQ4wuQ&oe=6512F0F8"
+                  src={
+                    user?.photoURL ||
+                    "https://scontent.fsgn5-14.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?stp=cp0_dst-png_p74x74&_nc_cat=1&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=MQXJ_lqnI0gAX848L9M&_nc_ht=scontent.fsgn5-14.fna&edm=AJqh0Q8EAAAA&oh=00_AfB_wCsZzpsvBNVxUNA0jTLH4OfIMZfpG-nl5oxwMQ4wuQ&oe=6512F0F8"
+                  }
                   alt="dsd"
                 />
               </div>
+
               <input
                 className="comment-input"
                 placeholder="Viết bình luận..."
                 value={newComment}
                 onChange={handleCommentChange}
               />
-              <button onClick={handleAddComment} className="comment-btn">
-                Thêm bình luận
-              </button>
+            </div>
+            <div className="comment-btn-area">
+              {userLoggedIn ? (
+                <button onClick={handleAddComment} className="comment-btn">
+                  Thêm bình luận
+                </button>
+              ) : (
+                <Link to={"/login"}>
+                  {" "}
+                  <button className="comment-login-text">
+                    Đăng nhập để bình luận
+                  </button>
+                </Link>
+              )}
             </div>
             <div className="comments-content">
               {comments.map((comment, index) => (
                 <div key={index} className="comment-item">
                   <div className="comment-logo">
                     <img
-                      src="https://scontent.fsgn5-14.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?stp=cp0_dst-png_p74x74&_nc_cat=1&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=MQXJ_lqnI0gAX848L9M&_nc_ht=scontent.fsgn5-14.fna&edm=AJqh0Q8EAAAA&oh=00_AfB_wCsZzpsvBNVxUNA0jTLH4OfIMZfpG-nl5oxwMQ4wuQ&oe=6512F0F8"
+                      src={
+                        comment.user?.photoURL ||
+                        "https://scontent.fsgn5-14.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?stp=cp0_dst-png_p74x74&_nc_cat=1&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=MQXJ_lqnI0gAX848L9M&_nc_ht=scontent.fsgn5-14.fna&edm=AJqh0Q8EAAAA&oh=00_AfB_wCsZzpsvBNVxUNA0jTLH4OfIMZfpG-nl5oxwMQ4wuQ&oe=6512F0F8"
+                      }
                       alt="dsd"
                     />
                   </div>
                   <div className="comments-body">
-                    <div className="comment-name">
-                      Hoang
-                      <div className="comment-date">
-                        {" "}
-                        {format(
-                          new Date(comment.createdAt),
-                          "yyyy-MM-dd HH:mm:ss"
-                        )}
+                    <span className="comment-name">
+                      {comment.user?.displayName}
+                    </span>
+                    <div className="comment-bd">{comment.body}</div>
+                    <div className="comment-footer">
+                      <div className="action-item">Thích</div>
+                      <div className="action-item">Phản hồi</div>
+                      <div className="comment-time">
+                        {calculateTimeDifference(comment.timestamp)}
                       </div>
                     </div>
-                    <div className="comment-bd">{comment.body}</div>
                   </div>
                 </div>
               ))}

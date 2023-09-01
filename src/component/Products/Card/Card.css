@@ -85,4 +85,14 @@ img {
 .no-underline {
     text-decoration: none;
   }
+
+@media (max-width: 500px) {
+    .card{
+        width: 370px;
+    }
+    .load-more{
+        width: 250px;
+        margin: 40px 64px;
+    }
+}
   

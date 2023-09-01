@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 import { FcGoogle } from "react-icons/fc";
 import "./Register.css";
@@ -10,8 +10,9 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { auth } from "../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { UserAuth } from "../../context/AuthContext";
 export const Register = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [showRePassword, setShowRePassword] = useState(false);
   const RegisterSchema = Yup.object().shape({
@@ -30,6 +31,19 @@ export const Register = () => {
       .oneOf([Yup.ref("password"), null], "Mật khẩu phải trùng khớp")
       .required("Không được bỏ trống"),
   });
+  const { googleSignIn,user } = UserAuth();
+  const handleGoogleSignIn = async () => {
+    try {
+      await googleSignIn();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    if (user != null) {
+      navigate('/')
+    }
+  },[]);
   return (
     <Formik
       initialValues={{
@@ -47,7 +61,7 @@ export const Register = () => {
           );
           // Registration successful, you can now handle the user or navigate to a different page
           console.log("User registered:", userCredential.user);
-          navigate('/login');
+          navigate("/login");
         } catch (error) {
           console.error("Registration error:", error.message);
         } finally {
@@ -77,7 +91,9 @@ export const Register = () => {
                   id="exampleEmail"
                   name="email"
                   type="email"
-                  className={`login-input ${errors.email && touched.email ? 'error-border' : ''}`}
+                  className={`login-input ${
+                    errors.email && touched.email ? "error-border" : ""
+                  }`}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.email}
@@ -94,7 +110,9 @@ export const Register = () => {
                   id="examplePassword"
                   name="password"
                   type={showPassword ? "text" : "password"}
-                  className={`login-input ${errors.password && touched.password ? 'error-border' : ''}`}
+                  className={`login-input ${
+                    errors.password && touched.password ? "error-border" : ""
+                  }`}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.password}
@@ -123,7 +141,11 @@ export const Register = () => {
                   id="examplePassword"
                   name="repeatpassword"
                   type={showRePassword ? "text" : "password"}
-                  className={`login-input ${errors.repeatpassword && touched.repeatpassword ? 'error-border' : ''}`}
+                  className={`login-input ${
+                    errors.repeatpassword && touched.repeatpassword
+                      ? "error-border"
+                      : ""
+                  }`}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.repeatpassword}
@@ -157,7 +179,7 @@ export const Register = () => {
             </Form>
             <div className="login-body">Or register with</div>
             <div className="login-dif">
-              <Button className="login-gg">
+              <Button className="login-gg" onClick={handleGoogleSignIn}>
                 <FcGoogle className="gg-icon" />
                 Google
               </Button>

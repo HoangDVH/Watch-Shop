@@ -11,3 +11,9 @@
 .swiper{
     margin-bottom: -22px !important;
 }
+
+@media (max-width: 500px) {
+    .banner-container{
+        margin-top: 50px;
+    }
+}

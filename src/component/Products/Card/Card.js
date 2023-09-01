@@ -5,7 +5,7 @@ import { Button, Card, CardBody, CardText, CardTitle } from "reactstrap";
 import { Link } from "react-router-dom";
 const API_URL = "http://localhost:5293/watches";
 
-export const Cart = ({ category }) => {
+export const Cart = ({ category, filters }) => {
   const [products, setProducts] = useState([]);
   const [visibleCount, setVisibleCount] = useState(8);
   const [visibleProducts, setVisibleProducts] = useState([]);
@@ -35,13 +35,35 @@ export const Cart = ({ category }) => {
         url = `${API_URL}?categories=${category}`;
       }
 
+      if (filters?.selectedWireType) {
+        url = `${url}&wire_material=${filters.selectedWireType}`; // Use selectedType from filters
+      }
+
+      if (filters?.selectedMovement) {
+        url = `${url}&product_type=${filters.selectedMovement}`; // Use selectedMovement from filters
+      }
+
+      if (filters?.selectedSort === "asc") {
+        url = `${url}&_sort=current_price&_order=asc`;
+      } else if (filters?.selectedSort === "desc") {
+        url = `${url}&_sort=current_price&_order=desc`;
+      }
+
+      if (filters?.selectedSex) {
+        url = `${url}&sex=${filters.selectedSex}`; // Use selectedMovement from filters
+      }
+
+      if (filters?.selectedBrand) {
+        url = `${url}&brand=${filters.selectedBrand}`; // Use selectedMovement from filters
+      }
+
       const res = await axios.get(url);
       setProducts(res.data);
       setVisibleProducts(res.data.slice(0, visibleCount));
       setIsLoading(false);
     };
     fetchData();
-  }, [category, visibleCount]);
+  }, [category, visibleCount, filters]);
 
   return (
     <div className="container">
@@ -80,7 +102,6 @@ export const Cart = ({ category }) => {
             );
           })}
         </div>
-
         <Button
           className="load-more"
           onClick={() => {

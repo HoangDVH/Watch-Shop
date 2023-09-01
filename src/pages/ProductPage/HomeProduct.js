@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar } from "../../component/NavBar/Navbar";
 import { HeaderSale } from "../../component/HeaderSale/HeaderSale";
 import { ProductPortfolio } from "../../component/Products/Productportfolio/ProductPortfolio";
@@ -30,15 +30,28 @@ const getCategoryNameFromSlug = (slug) => {
 export const HomeProduct = () => {
   const { category } = useParams();
   const categoryName = getCategoryNameFromSlug(category);
+  const [filters, setFilters] = useState({
+    selectedWireType: "",
+    selectedMovement: "",
+    selectedSort: "default",
+    selectedSex: "",
+    selectedBrand: "",
+  });
 
+  const handleFilterChange = (filterName, value) => {
+    setFilters({
+      ...filters,
+      [filterName]: value,
+    });
+  };
   return (
     <div>
       <Navbar />
       <HeaderSale />
       <BreadCrumb categoryName={categoryName} categorySlug={category} />
-      <SortBox />
+      <SortBox filters={filters} onFilterChange={handleFilterChange} />
       <ProductPortfolio name={category} />
-      <Cart category={category} />
+      <Cart category={category} filters={filters} />
       <ProductPortfolio name="thương hiệu phân phối" />
       <SliderBrand
         slidesPerView={6}

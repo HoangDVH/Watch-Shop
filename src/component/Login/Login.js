@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 import "./Login.css";
 import { FcGoogle } from "react-icons/fc";
@@ -10,17 +10,37 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
+import { UserAuth } from "../../context/AuthContext";
 export const Login = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [emailError, setEmailError] = useState(null); // State to store email error
   const [passwordError, setPasswordError] = useState(null); // State to store password error
+  const [isGoogleSignInCompleted, setIsGoogleSignInCompleted] = useState(false);
+
   const LoginSchema = Yup.object().shape({
     email: Yup.string()
       .email("Vui lòng nhập địa chỉ email hợp lệ")
       .required("Không được bỏ trống"),
     password: Yup.string().required("Không được bỏ trống"),
   });
+  const { googleSignIn, user } = UserAuth();
+  const handleGoogleSignIn = async () => {
+    try {
+      await googleSignIn();
+      setIsGoogleSignInCompleted(true);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+ 
+
+  useEffect(() => {
+    if (user != null && isGoogleSignInCompleted) {
+      navigate(-1);
+    }
+  }, [user, isGoogleSignInCompleted]);
+
   return (
     <Formik
       initialValues={{
@@ -81,7 +101,9 @@ export const Login = () => {
                   name="email"
                   placeholder="with a placeholder"
                   type="email"
-                  className={`login-input ${errors.email && touched.email ? 'error-border' : ''}`}
+                  className={`login-input ${
+                    errors.email && touched.email ? "error-border" : ""
+                  }`}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.email}
@@ -100,7 +122,9 @@ export const Login = () => {
                   name="password"
                   placeholder="password placeholder"
                   type={showPassword ? "text" : "password"}
-                  className={`login-input ${errors.password && touched.password ? 'error-border' : ''}`}
+                  className={`login-input ${
+                    errors.password && touched.password ? "error-border" : ""
+                  }`}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.password}
@@ -142,7 +166,7 @@ export const Login = () => {
             </Form>
             <div className="login-body">Or login with</div>
             <div className="login-dif">
-              <Button className="login-gg">
+              <Button className="login-gg" onClick={handleGoogleSignIn}>
                 <FcGoogle className="gg-icon" />
                 Google
               </Button>

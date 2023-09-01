@@ -36,3 +36,9 @@
    
 }
 
+@media (max-width: 500px) {
+    .box-title::after{
+        content: none;
+    }
+}
+

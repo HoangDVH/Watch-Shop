@@ -22,10 +22,10 @@ export const SliderTaxProduct = () => {
           slidesPerView={3}
           spaceBetween={10}
           navigation
-          // autoplay={{
-          //   delay: 5000,
-          //   disableOnInteraction: false,
-          // }}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+          }}
         >
           <SwiperSlide className="slider-img">
             <Link to={"/đồng hồ nam"} onClick={handleImageClick}>
@@ -77,7 +77,7 @@ export const SliderTaxProduct = () => {
             <span>Đồng hồ Trang Trí</span>
           </SwiperSlide>
           <SwiperSlide className="slider-img">
-            <Link to={'/kassaw'} onClick={handleImageClick}>
+            <Link to={"/kassaw"} onClick={handleImageClick}>
               {" "}
               <img
                 src="https://thanhhungwatch.vn/thumb/crop/12344/410/260/"

@@ -4,9 +4,10 @@
     display: flex;
     gap: 1px;
     position: relative;
+    margin-right: 11px !important;
 }
 .slider-img img{
-    width: 422px;
+    width: 428px;
 }
 
 .home-box-tax{
@@ -32,4 +33,15 @@
 .slider-img:hover{
     cursor: pointer;
     opacity: 0.7;
+}
+
+@media (max-width: 500px) {
+    .slider-img img{
+        width: 106px;
+        height: 150px;
+    } 
+    .slider-img span{
+        font-size: 0.7rem;
+        margin-left: 24px;
+    }
 }

@@ -33,10 +33,10 @@ function App() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/tin tức và sự kiện" element={<NewsPage />} />
-          <Route path="/tin tức và sự kiện/:news" element={<NewsDetailPage />} />
-
-
-
+          <Route
+            path="/tin tức và sự kiện/:news"
+            element={<NewsDetailPage />}
+          />
         </Routes>
       </AuthContextProvider>
 

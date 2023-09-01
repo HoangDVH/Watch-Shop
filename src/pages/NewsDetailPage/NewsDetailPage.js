@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import { NewsDetailContent } from "../../component/News/NewsDetailContent";
 import { useParams } from "react-router";
 import { Navbar } from "../../component/NavBar/Navbar";
@@ -18,7 +18,7 @@ export const NewsDetailPage = () => {
       .get('https://64c7a247a1fe0128fbd50e91.mockapi.io/comments')
       .then((response) => {
         const commentsData = response.data;
-        dispatch(setComments(commentsData)); // Dispatch the setComments action
+        dispatch(setComments(commentsData));
       })
       .catch((error) => {
         console.error('Error fetching comments:', error);

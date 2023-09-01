@@ -44,14 +44,15 @@ span{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: -160px;
 }
 .cart-mini-box{
     display: flex;
-    margin-right: 50px;
+    position: relative;
    
 }
 .navbar-icon-search{
-    font-size: 25px;
+    font-size: 30px;
     margin-right: 10px;
 }
 .cart-mini{
@@ -90,7 +91,14 @@ span{
     font-size: 18px;
 }
 .count{
-    color: yellow;
+    color: #070707;
+    position: absolute;
+    top: -5px;
+    right: 74px;
+    background-color: #fffc00;
+    padding: 0px 4px;
+    border-radius: 50%;
+    font-size: 12px;
 }
 .btn-search:hover{
     cursor: pointer;
@@ -191,6 +199,13 @@ span{
    }
    .count{
     margin-left: -5px;
+    width: 10px;
+    top: -4px;
+    right: 80px;
+    background-color: #fffc00;
+    padding: 0px 3px;
+    border-radius: 50%;
+    font-size: 10px;
    }
    .btn-search{
     right: 62px;
@@ -213,6 +228,8 @@ span{
         display: none;
     }
     .hamburger-menu{
+        top: 42px;
+        left: 0;
         display: block;
     }
     .main-menu ul{
@@ -238,6 +255,9 @@ span{
     }
     .slider-img{
         width: 26% !important;
+    }
+    .cart-mini-box{
+        margin-right: 159px;
     }
 
    
@@ -324,8 +344,11 @@ span{
     font-size: 1.5rem;
     color: #fff;
 }
+.logged-user:hover{
+    cursor: pointer;
+}
 .login-nav{
-    margin-left: 20px;
+    color: white;
     display: flex;
     align-items: center;
 }
@@ -336,4 +359,78 @@ span{
 .login-nav:hover{
     color: yellow;
     cursor: pointer;
+}
+.header-login{
+    display: flex;
+    align-items: center;
+}
+.header-login{
+    position: relative;
+}
+@keyframes headerGrowth{
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+.logged-avatar{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.logged-avatar img{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+.logged-popup{
+    display: none;
+    right: 0;
+    top: 50px;
+    background-color: #fff;
+    position: absolute;
+    width: 140px;
+    animation: headerGrowth ease-in 0.2s;
+    transform-origin: top;
+    cursor: pointer;
+}
+.logged-popup::before{
+    content: "";
+    border: 8px solid;
+    border-color: transparent transparent white transparent;
+    position: absolute;
+    top: -15px;
+    right: 38px;
+}
+.logged-popup::after{
+    content: "";
+    position: absolute;
+    top: -15px;
+    right: 0px;
+    width: 100px;
+    height: 16px;
+}
+.logged-user:hover{
+    .logged-popup{
+        display: block;
+        cursor: pointer;
+    }
+}
+.my-account, .logout-nav{
+    width: 100%;
+    padding: 5px 10px;
+}
+.my-account:hover{
+    background-color: #e3e1e1;
+}
+.logout-nav:hover{
+    background-color: #e3e1e1;
+    color: #070707;
+}
+.account-name{
+    color: #fff;
+    font-size: 1.4rem;
+    margin-left: 8px;
 }

@@ -98,43 +98,83 @@
 .comment-item{
     display: flex;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .comment-bd{
    width: 100%;
-   font-size: 1.5rem;
+   font-size: 1.6rem;
+   line-height: 1;
 }
 .comment-btn{
-    margin-left: 5px;
-    height: 50px;
     font-size: 1.5rem;
-    width: 170px;
+    padding: 6px;
+    background-color: #2285c3;
+    margin-top: 8px;
     border: 1px solid rgb(81, 80, 80);
+    color: white;
 }
 .comment-btn:hover{
     color: white;
-    background-color: rgb(112, 112, 109);
+   opacity: 0.9;
 }
 .comments-content{
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 .comments-body{
     margin-left: 8px;
     display: flex;
     flex-direction: column;
+    gap:10px;
 }
 .comment-name{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 1.6rem;
     color: blue;
     font-weight: 600;
+    line-height: 1;
+    margin-left: 0;
 }
 .comment-date{
     margin-left: 10px;
     font-size: 1.1rem;
     color: black;
 }
+.comment-login-text{
+    margin-top: 8px;
+    font-size: 1.5rem;
+    background-color: #2285c3;
+    width: 100%;
+    color: white;
+    border: 1px solid #8b8686;
+    border-radius: 2px;
+    padding: 6px;
+    font-weight: 600;
+}
+.comment-btn-area{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.comment-time{
+    opacity: 0.8;
+}
+.comment-footer{
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    color: blue;
+    line-height: 1;
+}
+
+.action-item::before {
+    content: "\2022";
+    margin: 5px; 
+}
+.comment-time::before{
+    content: "\2022";
+    margin: 5px; 
+}
+.action-item:first-child::before {
+    content: none;
+  }
