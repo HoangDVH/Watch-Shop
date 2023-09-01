@@ -16,17 +16,16 @@
 
 ## Introduction
 
-Watch-Web is an online platform designed for watch enthusiasts to discover, browse, and purchase watches. Whether you're a casual watch lover or a serious collector, our website offers a diverse collection of watches from various brands. With user-friendly features and a seamless shopping experience, Watch-Web aims to be your go-to destination for all things related to timepieces.
-
+Watch-Web is an online platform designed for watch enthusiasts to discover, browse, and purchase watches. Whether you're a casual watch lover or a serious collector, our website offers a diverse collection of watches from various brands. 
 ## Features
 
 - **Browse Watches:** Explore a vast catalog of watches with detailed product information.
+- **Product management for admins:** With functions to add, delete, edit products.
 - **Search and Filter:** Easily find watches by using search and filter options.
 - **User Authentication:** Register and log in to manage your account and access personalized features.
-- **Shopping Cart:** Add watches to your cart and proceed with a secure checkout process.
-- **Wishlist:** Save your favorite watches for future reference.
-- **Product Reviews:** Read and write reviews to share your opinions about watches.
-- **Responsive Design:** Enjoy a consistent experience across various devices and screen sizes.
+- **Shopping Cart:** Add watches to your cart.
+- **Product Reviews:** Read detailed product information.
+- **Comment:** Comment on the post.
 
 ## Technologies
 
@@ -80,17 +79,6 @@ npm start
 ```
 
 The application will be available at [http://localhost:3000](http://localhost:3000) in your web browser.
-
-## Contributing
-
-Contributions to Watch-Web are welcome! If you'd like to contribute, please follow these steps:
-
-1. Fork the repository on GitHub.
-2. Clone your fork to your local machine.
-3. Create a new branch for your feature or bug fix.
-4. Make your changes and commit them.
-5. Push your changes to your fork on GitHub.
-6. Open a pull request to the main repository.
 
 Please ensure your code follows best practices and includes appropriate documentation.
 
