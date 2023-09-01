@@ -16,7 +16,7 @@
 
 ## Introduction
 
-Watch-Web is an online platform designed for watch enthusiasts to discover, browse, and purchase watches. Whether you're a casual watch lover or a serious collector, our website offers a diverse collection of watches from various brands. 
+Website about selling watches. With product categories, search and filter. Know the detailed information of each product. Log in and register to the website with your google or gmail account. Product management such as adding, deleting, editing,...
 ## Features
 
 - **Browse Watches:** Explore a vast catalog of watches with detailed product information.
