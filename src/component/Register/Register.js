@@ -15,6 +15,7 @@ export const Register = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [showRePassword, setShowRePassword] = useState(false);
+  const [isGoogleSignInCompleted, setIsGoogleSignInCompleted] = useState(false);
   const RegisterSchema = Yup.object().shape({
     email: Yup.string()
       .email("Vui lòng nhập địa chỉ email hợp lệ")
@@ -31,19 +32,20 @@ export const Register = () => {
       .oneOf([Yup.ref("password"), null], "Mật khẩu phải trùng khớp")
       .required("Không được bỏ trống"),
   });
-  const { googleSignIn,user } = UserAuth();
+  const { googleSignIn, user } = UserAuth();
   const handleGoogleSignIn = async () => {
     try {
       await googleSignIn();
+      setIsGoogleSignInCompleted(true);
     } catch (error) {
       console.log(error);
     }
   };
   useEffect(() => {
-    if (user != null) {
-      navigate('/')
+    if (user != null && isGoogleSignInCompleted) {
+      navigate(-2);
     }
-  },[]);
+  }, [user, isGoogleSignInCompleted]);
   return (
     <Formik
       initialValues={{
