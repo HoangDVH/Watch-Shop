@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import "./Card.css";
 import { Button, Card, CardBody, CardText, CardTitle } from "reactstrap";
 import { Link } from "react-router-dom";
-const API_URL = "http://localhost:5293/watches";
+const API_URL = "https://ktc99p-8080.csb.app/watches";
 
 export const Cart = ({ category, filters }) => {
   const [products, setProducts] = useState([]);

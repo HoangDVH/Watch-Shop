@@ -27,7 +27,7 @@ export const ProductDetail = () => {
       const fetchProductDetail = async () => {
         try {
           const response = await fetch(
-            `http://localhost:5293/watches?categories=${category}&title=${productTitle}`
+            `https://ktc99p-8080.csb.app/watches?categories=${category}&title=${productTitle}`
           );
           const data = await response.json();
           console.log({ data });
