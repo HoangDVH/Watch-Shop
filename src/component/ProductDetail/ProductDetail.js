@@ -9,8 +9,10 @@ import { ProductSingleDetail } from "../ProductSingleDetail/ProductSingleDetail"
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../store/cartSlice";
 import { toast } from "react-toastify";
+import { UserAuth } from "../../context/AuthContext";
 
 export const ProductDetail = () => {
+  const { userLoggedIn} = UserAuth();
   const dispatch = useDispatch();
   const location = useLocation();
   const { productData } = location.state || {}; // Use empty object as default
@@ -111,18 +113,27 @@ export const ProductDetail = () => {
               </p>
             </div>
             <div className="product-btn">
-              <Link>
-                <Button
-                  className="btn-buy"
-                  onClick={() => {
-                    dispatch(addToCart(productDetail));
-                    toast.success("Sản phẩm đã được thêm vào giỏ hàng!");
-                  }}
-                >
-                  MUA NGAY
-                  <p>Thanh toán khi nhận hàng</p>
-                </Button>
-              </Link>
+              {userLoggedIn ? (
+                <Link>
+                  <Button
+                    className="btn-buy"
+                    onClick={() => {
+                      dispatch(addToCart(productDetail));
+                      toast.success("Sản phẩm đã được thêm vào giỏ hàng!");
+                    }}
+                  >
+                    MUA NGAY
+                    <p>Thanh toán khi nhận hàng</p>
+                  </Button>
+                </Link>
+              ) : (
+                <Link to={"/login"}>
+                  <Button className="btn-buy">
+                    MUA NGAY
+                    <p>Thanh toán khi nhận hàng</p>
+                  </Button>
+                </Link>
+              )}
               <Button className="btn-installment">
                 TRẢ GÓP QUA CCCD
                 <p>Căn cước - Sim chính chủ</p>
