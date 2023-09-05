@@ -7,3 +7,43 @@
 .select-name{
     font-size: 1.4rem;
 }
+.sort-area{
+    display: flex;
+    gap:8px;
+}
+.sort-result{
+    display: flex;
+    gap:40px;
+    color: black;
+    background-color: aliceblue;
+    padding:10px 8px;
+}
+.sort-btn{
+    border: none;
+    color: red;
+    margin-left: 5px;
+}
+.sort-title{
+    display: flex;
+    align-items: center;
+    font-weight: bold ;
+    margin-bottom: 0 !important;
+}
+.sort-machine, .sort-rope, .sort-brand, .sort-sex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.sort-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sort-name{
+    line-height: 1px;
+    font-weight: 400;
+    margin-bottom: 0;
+    margin-left: 5px;
+    font-size: 1.4rem;
+}
