@@ -16,8 +16,8 @@
 
 ## Introduction
 
-Website about selling watches. With product categories, search and filter. Know the detailed information of each product. Log in and register to the website with your google or gmail account. Product management such as adding, deleting, editing,...
-If you want to access the admin account: Email:admin@gmail.com | Password: Admin@123
+- **Website:** about selling watches. With product categories, search and filter. Know the detailed information of each product. Log in and register to the website with your google or gmail account. Product management such as adding, deleting, editing,...
+- **If you want to access the admin account:** Email:admin@gmail.com | Password: Admin@123
 ## Features
 
 - **Browse Watches:** Explore a vast catalog of watches with detailed product information.
