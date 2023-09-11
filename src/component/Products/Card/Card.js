@@ -3,9 +3,11 @@ import React, { useEffect, useState } from "react";
 import "./Card.css";
 import { Button, Card, CardBody, CardText, CardTitle } from "reactstrap";
 import { Link } from "react-router-dom";
-const API_URL = "https://ktc99p-8080.csb.app/watches";
+import { UserAuth } from "../../../context/AuthContext";
+const API_URL = "https://sdtmlm-8080.csb.app/watches";
 
 export const Cart = ({ category, filters }) => {
+  const { userLoggedIn, user } = UserAuth();
   const [products, setProducts] = useState([]);
   const [visibleCount, setVisibleCount] = useState(8);
   const [visibleProducts, setVisibleProducts] = useState([]);

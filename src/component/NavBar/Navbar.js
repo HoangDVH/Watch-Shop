@@ -30,7 +30,7 @@ export const Navbar = () => {
     const fetchSearchResults = async () => {
       try {
         const response = await fetch(
-          `https://ktc99p-8080.csb.app/watches?q=${searchQuery}`
+          `https://sdtmlm-8080.csb.app/watches?q=${searchQuery}`
         );
         const data = await response.json();
         setSearchResults(data);

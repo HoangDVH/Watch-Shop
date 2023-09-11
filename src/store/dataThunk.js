@@ -3,7 +3,7 @@ import { updateProduct as updateProductAction } from "./dataSlice";
 export const fetchProducts = (page) => async (dispatch) => {
   try {
     const response = await fetch(
-      `https://ktc99p-8080.csb.app/watches?_page=${page}&_limit=15`
+      `https://sdtmlm-8080.csb.app/watches?_page=${page}&_limit=15`
     );
     const products = await response.json();
     const totalCountHeader = response.headers.get("X-Total-Count");
@@ -16,7 +16,7 @@ export const fetchProducts = (page) => async (dispatch) => {
 
 export const addProduct = (productData) => async (dispatch) => {
   try {
-    const response = await fetch("https://ktc99p-8080.csb.app/watches", {
+    const response = await fetch("https://sdtmlm-8080.csb.app/watches", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ export const addProduct = (productData) => async (dispatch) => {
 
 export const deleteProduct = (productId) => async (dispatch) => {
   try {
-    const response = await fetch(`https://ktc99p-8080.csb.app/watches/${productId}`, {
+    const response = await fetch(`https://sdtmlm-8080.csb.app/watches/${productId}`, {
       method: "DELETE",
     });
 
@@ -55,7 +55,7 @@ export const updateProduct =
   (productId, updatedProductData) => async (dispatch) => {
     try {
       const response = await fetch(
-        `https://ktc99p-8080.csb.app/watches/${productId}`,
+        `https://sdtmlm-8080.csb.app/watches/${productId}`,
         {
           method: "PUT",
           headers: {

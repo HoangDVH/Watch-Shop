@@ -29,7 +29,7 @@ export const ProductDetail = () => {
       const fetchProductDetail = async () => {
         try {
           const response = await fetch(
-            `https://ktc99p-8080.csb.app/watches?categories=${category}&title=${productTitle}`
+            `https://sdtmlm-8080.csb.app/watches?categories=${category}&title=${productTitle}`
           );
           const data = await response.json();
           console.log({ data });
