@@ -31,9 +31,9 @@ export const GeneralForm = ({ isOpen, toggle, mode, editedProduct }) => {
     if (mode === "edit product" && editedProduct) {
       setFormData({
         title: editedProduct.title,
-        current_price: editedProduct.current_price.toLocaleString(),
-        old_price: editedProduct.old_price.toLocaleString(),
-        percentage_price: editedProduct.percentage_price.toString(),
+        current_price: editedProduct.current_price,
+        old_price: editedProduct.old_price,
+        percentage_price: editedProduct.percentage_price,
         image: editedProduct.image,
         categories: editedProduct.categories,
         brand: editedProduct.brand,
