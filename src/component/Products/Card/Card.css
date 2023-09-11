@@ -87,12 +87,35 @@ img {
   }
 
 @media (max-width: 500px) {
-    .card{
-        width: 370px;
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap:8px;
     }
-    .load-more{
-        width: 250px;
-        margin: 40px 64px;
+    .card{
+        height: 305px;
+        width: 197px;
+    }
+    .load-more {
+        font-size: 1.2rem;
+        width: 150px;
+        margin: 40px 126px;
+    }
+    .card-title{
+        font-size: 1.2rem;
+        margin-bottom: 0;
+    }
+    .product-curentprice, .product-oldprice, .product-perprice{
+        font-size: 1.2rem;
+    }
+    .icon-installment{
+        font-size: 0.8rem;
+    }
+    .card-text {
+        width: 149px;
+    }
+    .card img{
+        width: 97%;
     }
 }
   

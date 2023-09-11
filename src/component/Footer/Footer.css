@@ -58,3 +58,18 @@
     width: 120px;
     height: 40px;
 }
+
+@media (max-width: 500px) {
+    .footer-container img {
+        width: 140px;
+        height: 126px;
+    }
+    .footer-container h2{
+        font-size: 1.2rem;
+        width: 126px;
+    }
+    .footer-container p{
+        font-size: 1.2rem;
+        width: 126px;
+    }
+}

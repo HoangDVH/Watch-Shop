@@ -7,11 +7,12 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import "./NavBar.css";
 import "tippy.js/dist/tippy.css";
 import { useSelector } from "react-redux";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FiLogIn } from "react-icons/fi";
 import { UserAuth } from "../../context/AuthContext";
 
 export const Navbar = () => {
+  const [isBrandMenuOpen, setIsBrandMenuOpen] = useState(false);
   const cartItems = useSelector((state) => state.cart);
   const totalQuantity = cartItems.reduce(
     (total, item) => total + item.quantity,
@@ -20,7 +21,7 @@ export const Navbar = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 
   //Create login
-  const { userLoggedIn, logoutUser,user } = UserAuth(); // Use the userLoggedIn and logoutUser from AuthContext
+  const { userLoggedIn, logoutUser, user } = UserAuth(); // Use the userLoggedIn and logoutUser from AuthContext
 
   //Create search
   const [searchQuery, setSearchQuery] = useState("");
@@ -129,8 +130,11 @@ export const Navbar = () => {
             {userLoggedIn ? (
               <div className="logged-user">
                 <div className="logged-avatar">
-                  <img 
-                    src={user?.photoURL || "https://scontent.fsgn5-14.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?stp=cp0_dst-png_p74x74&_nc_cat=1&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=MQXJ_lqnI0gAX848L9M&_nc_ht=scontent.fsgn5-14.fna&edm=AJqh0Q8EAAAA&oh=00_AfB_wCsZzpsvBNVxUNA0jTLH4OfIMZfpG-nl5oxwMQ4wuQ&oe=6512F0F8"}
+                  <img
+                    src={
+                      user?.photoURL ||
+                      "https://scontent.fsgn5-14.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?stp=cp0_dst-png_p74x74&_nc_cat=1&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=MQXJ_lqnI0gAX848L9M&_nc_ht=scontent.fsgn5-14.fna&edm=AJqh0Q8EAAAA&oh=00_AfB_wCsZzpsvBNVxUNA0jTLH4OfIMZfpG-nl5oxwMQ4wuQ&oe=6512F0F8"
+                    }
                     alt="dsa"
                   ></img>
                   <div className="account-name">{user?.displayName}</div>
@@ -175,11 +179,17 @@ export const Navbar = () => {
                 <Link to={"/"}>Trang chủ</Link>
               </li>
               <li className="menu-item menu-disable li-parent">
-                <a href="">
+                <a
+                  href=""
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsBrandMenuOpen(!isBrandMenuOpen);
+                  }}
+                >
                   THƯƠNG HIỆU
                 </a>
 
-                <ul className="sub-menu">
+                <ul className={`sub-menu ${isBrandMenuOpen ? 'open' : ''}`}>
                   <li>
                     <Link to={"/lobinni"}>Đồng hồ LOBINNI</Link>
                   </li>

@@ -2,3 +2,9 @@
     width: 208px;
     height: 60%;
 }
+@media (max-width: 500px) {
+    .slider-brand img{
+        width: 67px;
+        height: 70%;
+    }
+}
