@@ -102,3 +102,12 @@
     background-color: green;
     margin-top: 30px;
 }
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+    .form-payment{
+        width: 50%;
+    }
+    .order{
+        width: 50%;
+    }
+}

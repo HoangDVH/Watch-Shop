@@ -119,3 +119,41 @@ img {
     }
 }
   
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+    
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap:8px;
+    }
+    .card{
+        height: 395px;
+        width: 270px;
+    }
+    .header-top-right{
+        margin-right: -91px;
+    }
+    .header-top{
+        padding-right: 6px;
+    }
+    .load-more{
+        margin: 40px 386px;
+    }
+    .box-title::after{
+        width: 840px;
+    }
+    .swiper-wrapper .slider-brand img{
+        width: 183px;
+    }
+    .text .product-price{
+        width: 300px;
+        text-align: left;
+    }
+    .product-btn .btn-installment{
+        width: 49%;
+    }
+    .product-btn .btn-hotline{
+        width: 99%;
+    }
+}

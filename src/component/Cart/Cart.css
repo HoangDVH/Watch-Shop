@@ -174,3 +174,15 @@
   align-items: center;
   justify-content: center;
 }
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .cart-img {
+    width: 470px;
+  }
+  .cart-price, .cart-quantity, .total-money{
+    width: 250px;
+  }
+  .button-delete{
+    margin-left: 17px;
+  }
+}

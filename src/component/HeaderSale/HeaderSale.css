@@ -26,3 +26,9 @@ img {
         margin-left: auto;
     }
 }
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+    .lazy{
+        width: 100%;
+    }
+}
