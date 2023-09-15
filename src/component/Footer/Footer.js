@@ -27,7 +27,7 @@ export const Footer = () => {
               </Col>
               <Col className="footer-container">
                 <img
-                  src="https://scontent.fsgn16-1.fna.fbcdn.net/v/t1.6435-9/72758591_2419598324946856_3540841347437035520_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=300f58&_nc_ohc=BhM_xaA_Q_IAX_Zfuzf&_nc_ht=scontent.fsgn16-1.fna&oh=00_AfBlGYkXV0aPRlrdVCyISlKfBW-T1hQZHfbFLnWzlIAbig&oe=6502E55A"
+                  src="https://scontent.fsgn5-1.fna.fbcdn.net/v/t1.6435-9/109120534_2676183315955021_4299283605561251768_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=e3f864&_nc_ohc=A3T0g2DVDxIAX-lDUmS&_nc_ht=scontent.fsgn5-1.fna&oh=00_AfBX_0pdncYev0lINtDvcG8Os_VlB90oyS6QPBCCsBxMNA&oe=652BCCC6"
                   alt="hinhanh"
                 ></img>
               </Col>
